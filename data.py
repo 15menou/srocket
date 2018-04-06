@@ -77,3 +77,8 @@ class Aspect:
 class Picture:
 
     rocket_body = 'rocket_body.png'
+
+
+class Simu:
+
+    max_sim_duration = 20
