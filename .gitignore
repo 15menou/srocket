@@ -4,3 +4,6 @@
 *.bmp
 *.gif
 *.jpg
+*.pptx
+doc/*
+!doc/*.tex

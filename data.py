@@ -82,3 +82,8 @@ class Picture:
 class Simu:
 
     max_sim_duration = 20
+
+
+class InitCond:
+
+    r0 = 6400

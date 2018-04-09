@@ -84,11 +84,16 @@ class SimGUI:
         self.prompter_sim = Prompter(self.prompter_frame_sim, name='Simulation')
 
     def simulate(self):
-        while self.t < Simu.max_sim_duration:
+        t0 = self.t
+        while self.t < Simu.max_sim_duration + t0:
             self.t = self.t + self.dt
             theta = 30.0 * np.sin(self.t)
             self.rocket_view.set_angle(theta)
             self.prompter_it.feed('Time {}:'.format(self.t))
+            self.update_all()
+
+    def update_all(self):
+        pass
 
 
 class Prompter:

@@ -3,6 +3,8 @@ from data import *
 from rocket import Rocket
 from PIL import ImageTk
 from PIL import Image
+from environement import Atm
+
 
 class RocketView:
 
@@ -21,6 +23,7 @@ class RocketView:
         self.rocket_pict = ImageTk.PhotoImage(self.rocket_img.rotate(0.0))
         self.canvas = tk.Canvas(self.root)
         self.canvas.config(width=self.canvas_width, height=self.canvas_height)
+        self.set_background_color()
         self.rocket_picture = self.canvas.create_image(self.middle_x,
                                                        self.middle_y,
                                                        image=self.rocket_pict)
@@ -28,6 +31,10 @@ class RocketView:
         self.canvas.grid(column=0, row=0,
                          rowspan=100,
                          sticky=Aspect.def_sticky)
+
+    def set_background_color(self):
+        color = Atm.air_color(self.rocket.r)
+        self.canvas.config(bg=color)
 
     def set_angle(self, angle):
         angle %= 360

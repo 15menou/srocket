@@ -1,0 +1,54 @@
+\documentclass[a4paper,oneside,11pt,onecolumn]{article}
+
+%importation des packages
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{here}
+\usepackage{geometry}
+\usepackage{cite}
+\usepackage{caption}
+\geometry{hmargin=2.2cm,vmargin=2.5cm}
+
+\usepackage[final]{pdfpages} 
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees}
+\captionsetup[figure]{labelfont={bf},font={small}}
+
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\set}{:=}
+
+\begin{document}
+\title{Rocket dynamics for python simulator}
+\author{Hubert Ménou}
+\date{2018}
+\maketitle
+
+\section{Set up}
+\subsection{Notation}
+\begin{itemize}
+	\item $Re = 6371 km$ : Earth's average radius.
+	\item $G = 6.674 \cdot 10^{-11}$ : gravitational constant.
+	\item $\alpha$ : Earth's angular position compared to fixed frame (rad).
+	\item $\omega = \dot{\alpha} =  7.272 \cdot 10^{-5} rad/s$ : Earth's rotation rate.
+\end{itemize}
+\subsection{Frames}
+Main frame: $\tau_0 \set (\vect{x_0}, \vect{z_0})$.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5 \textwidth,page=1]{overall_scheme.png}
+\end{center}
+\end{figure}
+
+\section{Dynamics equation}
+\subsection{Rocket dynamics}
+Write down the equation that convey the rocket's movement here.
+\subsection{Integration scheme}
+Detail Euler, RK4, and else.
+
+\enddocument
