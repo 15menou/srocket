@@ -1,9 +1,10 @@
-import tkinter as tk
 from data import *
 from rocket import Rocket
 from PIL import ImageTk
 from PIL import Image
 from environement import Atm
+from log import Log
+import tkinter as tk
 
 
 class RocketView:
@@ -33,7 +34,7 @@ class RocketView:
                          sticky=Aspect.def_sticky)
 
     def set_background_color(self):
-        color = Atm.air_color(self.rocket.r)
+        color = Atm.air_color(self.rocket.get_state('r'))
         self.canvas.config(bg=color)
 
     def set_angle(self, angle):
